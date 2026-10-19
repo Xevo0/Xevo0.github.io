@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mateusz Przadka (55707) - IS LAB B</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <h1>Lista zadań</h1>
+
+    <label for="search-input">Szukaj:</label>
+    <input id="search-input" type="search" placeholder="Wpisz szukaną frazę">
+
+    <ul id="task-list"></ul>
+    <p id="empty-state" hidden>Nie masz jeszcze zadań.</p>
+    <p id="search-empty-state" hidden>Nie znaleziono zadań.</p>
+
+    <h2>Dodaj zadanie</h2>
+    <form id="task-form" novalidate>
+        <label for="task-input">treść zadania:</label>
+        <input id="task-input" type="text" minlength="3" maxlength="255" required>
+
+        <label for="task-deadline">Termin (opcjonalnie):</label>
+        <input id="task-deadline" type="datetime-local">
+
+        <button type="submit">Dodaj</button>
+        <p id="form-message" role="status"></p>
+    </form>
+</body>
+</html>
