@@ -1,3 +1,116 @@
+
+
 body {
-    background-color: skyblue;
+    background: #f0f2fa;
+    font-family: Arial, sans-serif;
+    color: #252d48;
+}
+
+
+.site-header {
+    background: linear-gradient(120deg, #191b3a, #5142a0);
+    box-shadow: 0 4px 15px #0002;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #ddd5ff;
+}
+
+.site-header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.site-header nav a:hover {
+    color: #c9c0ff;
+}
+
+
+h1 {
+    color: #312b67;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #2222;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+
+.table {
+    vertical-align: middle;
+}
+
+.table thead th {
+    background: #312b67;
+    color: white;
+}
+
+.table tbody tr:hover td {
+    background: #eeebff;
+}
+
+
+.btn {
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 9px 15px;
+}
+
+.btn-primary {
+    background: #6752d8;
+    border-color: #6752d8;
+}
+
+.btn-primary:hover {
+    background: #4935b0;
+    border-color: #4935b0;
+}
+
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.form-control:focus {
+    border-color: #6752d8;
+    box-shadow: 0 0 0 3px #6752d833;
+}
+
+
+.site-footer {
+    background: #191b3a;
+    color: white;
+}
+
+.site-footer p {
+    color: #c4c4dc;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
 }

@@ -1,37 +1,51 @@
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}Lista postów{% endblock %}
 
 {% block body %}
-    <h1>Post index</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Lista postów</h1>
+        <a href="{{ path('app_post_new') }}" class="btn btn-primary">
+            Dodaj post
+        </a>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Subject</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.subject }}</td>
-                <td>{{ post.description }}</td>
-                <td>
-                    <a href="{{ path('app_post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_post_new') }}">Create new</a>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Temat</th>
+                    <th>Opis</th>
+                    <th>Akcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for post in posts %}
+                    <tr>
+                        <td>{{ post.id }}</td>
+                        <td>{{ post.subject }}</td>
+                        <td>{{ post.description }}</td>
+                        <td>
+                            <a href="{{ path('app_post_show', {'id': post.id}) }}"
+                               class="btn btn-info btn-sm">
+                                Szczegóły
+                            </a>
+                            <a href="{{ path('app_post_edit', {'id': post.id}) }}"
+                               class="btn btn-warning btn-sm">
+                                Edytuj
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">Brak postów</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

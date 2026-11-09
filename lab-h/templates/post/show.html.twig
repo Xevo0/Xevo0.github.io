@@ -1,30 +1,43 @@
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Post{% endblock %}
+{% block title %}Szczegóły posta{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+    <h1>Szczegóły posta</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-            <tr>
-                <th>Subject</th>
-                <td>{{ post.subject }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ post.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ post.id }}</td>
+                </tr>
+                <tr>
+                    <th>Temat</th>
+                    <td>{{ post.subject }}</td>
+                </tr>
+                <tr>
+                    <th>Opis</th>
+                    <td class="description">{{ post.description }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+    <div class="mt-3">
+        <a href="{{ path('app_post_index') }}" class="btn btn-secondary">
+            Powrót
+        </a>
 
-    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+        <a href="{{ path('app_post_edit', {'id': post.id}) }}" class="btn btn-warning">
+            Edytuj
+        </a>
+    </div>
 
-    {{ include('post/_delete_form.html.twig') }}
+    <div class="mt-3">
+        {{ include('post/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
